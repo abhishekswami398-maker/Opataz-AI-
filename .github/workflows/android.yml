@@ -5,17 +5,22 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Buildozer
+        run: |
+          pip install buildozer
+          sudo apt update
+          sudo apt install -y zip unzip openjdk-17-jdk
 
       - name: Build APK
-        uses: ArtemSBulgakov/buildozer-action@v1
-
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: Opataz-AI-APK
-          path: bin/*.apk
+        run: |
+          buildozer android debug
