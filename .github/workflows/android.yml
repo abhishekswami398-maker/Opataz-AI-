@@ -8,16 +8,14 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Build APK
-        uses: digreatbrian/buildozer-action@v2
-        with:
-          buildozer_version: stable
+        uses: ArtemSBulgakov/buildozer-action@v1
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: opataz-apk
+          name: Opataz-AI-APK
           path: bin/*.apk
