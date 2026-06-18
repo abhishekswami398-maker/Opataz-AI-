@@ -8,10 +8,10 @@ MDScreen:
         orientation: "vertical"
 
         MDTopAppBar:
-            title: "🔮 Opataz AI Offline"
+            title: "🔮 Opataz AI (offline)"
 
         MDLabel:
-            text: "⏱️ Time"
+            text: "⏱️ समय"
             halign: "center"
             font_style: "H5"
 
@@ -20,11 +20,11 @@ MDScreen:
             height: "100dp"
 
             MDLabel:
-                text: "Time Here"
+                text: "समय यहाँ दिखाई देगा"
                 halign: "center"
 
         MDLabel:
-            text: "📊 Rang Box"
+            text: "📊 रंग बॉक्स एवं आवृत्ति"
             halign: "center"
             font_style: "H5"
 
@@ -34,7 +34,7 @@ MDScreen:
                 id: rang_box_list
 
         MDLabel:
-            text: "🔢 O'"
+            text: "🔢 ओपटाज़' (O')"
             halign: "center"
 
         MDLabel:
@@ -42,7 +42,7 @@ MDScreen:
             text: "0"
 
         MDLabel:
-            text: "🎯 Final Opataz"
+            text: "🎯 अंतिम ओपटाज़"
             halign: "center"
 
         MDLabel:
@@ -52,6 +52,7 @@ MDScreen:
 
 class OpatazApp(MDApp):
     def build(self):
+        self.title = "ओपटाज़ एआई"
         return Builder.load_string(KV)
 
 OpatazApp().run()
