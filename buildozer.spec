@@ -9,16 +9,15 @@ source.include_exts = py,png,jpg,kv,ttf,csv
 
 version = 1.0
 
-requirements = python3,kivy,kivymd,numpy,pandas
+requirements = python3,kivy==2.3.0,kivymd,numpy,pandas
 
 orientation = portrait
-
 fullscreen = 0
-
-android.permissions = READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
 
 android.api = 33
 android.minapi = 21
+
+android.permissions = READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
 
 [buildozer]
 
